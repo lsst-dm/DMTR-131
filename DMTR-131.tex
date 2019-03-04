@@ -1,18 +1,21 @@
 \documentclass[DM,toc]{lsstdoc}
 \usepackage{booktabs}
 
-\title[V16.0 Characterization Report]{Characterization Metric Report: Science Pipelines Version 16.0}
+\title[V17.0 Characterization Report]{Characterization Metric Report: Science Pipelines Version 17.0}
 \author{Simon Krughoff and Michael Wood-Vasey}
-\date{2018-06-26}
+\date{2018-03-04}
 
-\setDocRef{DMTR-81}
+\setDocRef{DMTR-131}
 
 \setDocAbstract{%
-This brief report describes measurements of interest that were carried out for release v16.0 of the Science Pipeline.
+This brief report describes measurements of interest that were carried out for release v17.0 of the Science Pipeline.
 
-In short, the astrometric performance is excellent in comparison to both the per cycle ramps as well as the design level KPMs. The photometric performance is not as good. Though the photometric KPMs are not meeting specs, there have been no regressions from the v15.0 release. 
+In short, the astrometric performance is excellent in comparison to both the per cycle ramps as well as the design level KPMs. The photometric performance is not as good. Though the photometric KPMs are not meeting specs, there have been no regressions from the v16.0 release.
 
-The report for the previous version can be found in \citeds{DMTR-62}.
+Note that TE1 and TE2 are significantly different than the values reported in the v16.0 characterization report.  This is due to an intentional
+change in how those KPMs are measured.
+
+The report for the previous version can be found in \citeds{DMTR-81}.
 }
 
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
@@ -28,6 +31,10 @@ Some KPMs (AF1, AD1) involve thresholds that are different for ``design'', ``min
 The metrics in this report have all been computed relative to the ``design'' thresholds. The values of these KPMs would be different if computed against different thresholds.
 
 Note also that the photometric performance of the pipelines in the \emph{y}-band is an under estimate of expected delivered performance.  For these tests, the \emph{y}-band data was calibrated with \emph{z}-band photometry.  This is due to the lack of a reference catalog containing \emph{y}-band information at this time. We recognize that the bandpass mismatch is certainly not the only source of scatter in the \emph{y}-band photometry. These metric measurements are still worth noting in this report as a historical benchmark to track relative performance.
+
+The measurements of the ellipticity correlation metrics, TE1 and TE2, changed significantly relative to previous characterization reports.  This is
+due to an intentional change in how the measurements are defined in \texttt{validate_drp}. In early July 2018, the measurement definitions were changed
+to agree with the definitions used in high level project documents: e.g. \href{http://ls.st/LPM-17}{LPM-17}.
 
 The per cycle target numbers come from the ``KPMs'' sheet of \href{http://ls.st/LDM-240}{LDM-240}.
 
@@ -49,7 +56,7 @@ Unit\strut
 \end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
 SRD Requirement--Design\strut
 \end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
-Release 16 Target\strut
+Release 17 Target\strut
 \end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\raggedright\strut
 Value\strut
 \end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\raggedright\strut
@@ -105,7 +112,7 @@ mmag\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 8.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-14.60\strut
+14.30\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -118,7 +125,7 @@ mmag\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 8.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-12.00\strut
+12.20\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -144,7 +151,7 @@ mmag\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 12.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-25.10\strut
+25.30\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -183,7 +190,7 @@ PF1: \emph{r}\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 10.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-31.70\strut
+30.90\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -196,7 +203,7 @@ PF1: \emph{i}\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 10.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-26.10\strut
+27.00\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -222,7 +229,7 @@ PF1: \emph{y}\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 20.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-37.20\strut
+38.10\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -274,7 +281,7 @@ mmag\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 20.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-25.60\strut
+25.90\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -300,7 +307,7 @@ mmag\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 20.0\strut
 \end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\raggedright\strut
-44.60\strut
+45.10\strut
 \end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\raggedright\strut
 \strut
 \end{minipage}\tabularnewline
@@ -319,7 +326,7 @@ The following metrics are defined following LSR-REQ-0094
 Metric &
 Unit &
 SRD Requirement &
-Release 16 Target &
+Release 17 Target &
 Value
 \tabularnewline
 \midrule
@@ -328,109 +335,109 @@ AM1: \emph{r} &
 mas &
 \(\leq 20\) &
 30.0 &
-6.66
+3.65
 \tabularnewline
 AM1: \emph{i} &
 mas &
 \(\leq 20\) &
 30.0 &
-9.08
+7.09
 \tabularnewline
 AM1: \emph{y} &
 mas &
 \(\leq 20\) &
 30.0 &
-12.45
+5.82
 \tabularnewline
 AF1: \emph{r} &
 \% &
 \(\leq 10\) &
 10.0 &
-2.64
+0.17
 \tabularnewline
 AF1: \emph{i} &
 \% &
 \(\leq 10\) &
 10.0 &
-2.16
+0.58
 \tabularnewline
 AF1: \emph{y} &
 \% &
 \(\leq 10\) &
 10.0 &
-10.70
+0.82
 \tabularnewline
 AD1: \emph{r} &
 mas &
 \(\leq 20\) &
 20.0 &
-10.90
+5.77
 \tabularnewline
 AD1: \emph{i} &
 mas &
 \(\leq 20\) &
 20.0 &
-10.90
+8.34
 \tabularnewline
 AD1: \emph{y} &
 mas &
 \(\leq 20\) &
 20.0 &
-20.80
+8.94
 \tabularnewline
 AM2: \emph{r} &
 mas &
 \(\leq 10\) &
-40.0 &
-6.46
+30.0 &
+3.75
 \tabularnewline
 AM2: \emph{i} &
 mas &
 \(\leq 10\) &
-40.0 &
-9.90
+30.0 &
+7.37
 \tabularnewline
 AM2: \emph{y} &
 mas &
 \(\leq 10\) &
-40.0 &
-13.20
+30.0 &
+6.47
 \tabularnewline
 AF2: \emph{r} &
 \% &
 \(\leq 10\) &
 10.0 &
-2.24
+0.16
 \tabularnewline
 AF2: \emph{i} &
 \% &
 \(\leq 10\) &
 10.0 &
-2.26
+0.62
 \tabularnewline
 AF2: \emph{y} &
 \% &
 \(\leq 10\) &
 10.0 &
-11.10
+1.17
 \tabularnewline
 AD2: \emph{r} &
 mas &
 \(\leq 20\) &
 20.0 &
-10.60
+5.94
 \tabularnewline
 AD2: \emph{i} &
 mas &
 \(\leq 20\) &
 20.0 &
-11.00
+8.16
 \tabularnewline
 AD2: \emph{y} &
 mas &
 \(\leq 20\) &
 20.0 &
-21.30
+9.79
 \tabularnewline
 \bottomrule
 \end{longtable}
@@ -451,7 +458,7 @@ Unit\strut
 \end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\raggedright\strut
 SRD Requirement\strut
 \end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright\strut
-Release 16 Target\strut
+Release 17 Target\strut
 \end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
 Value\strut
 \end{minipage}\tabularnewline
@@ -466,7 +473,7 @@ TE1: \emph{r}\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \(\leq 3\times 10^{-5}\)\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\(3.37\times 10^{-6}\)\strut
+\(1.26\times 10^{-5}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
 TE1: \emph{i}\strut
@@ -477,7 +484,7 @@ TE1: \emph{i}\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \(\leq 3\times 10^{-5}\)\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\(1.19\times 10^{-6}\)\strut
+\(1.78\times 10^{-6}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
 TE1: \emph{y}\strut
@@ -488,7 +495,7 @@ TE1: \emph{y}\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \(\leq 3\times 10^{-5}\)\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\(5.92\times 10^{-5}\)\strut
+\(2.38\times 10^{-4}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
 TE2: \emph{r}\strut
@@ -499,7 +506,7 @@ TE2: \emph{r}\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \(\leq 3\times 10^{-7}\)\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\(8.30\times 10^{-8}\)\strut
+\(3.48\times 10^{-7}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
 TE2: \emph{i}\strut
@@ -510,7 +517,7 @@ TE2: \emph{i}\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \(\leq 3\times 10^{-7}\)\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\(1.27\times 10^{-7}\)\strut
+\(5.49\times 10^{-7}\)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.13\columnwidth}\raggedright\strut
 TE2: \emph{y}\strut
@@ -521,7 +528,7 @@ TE2: \emph{y}\strut
 \end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \(\leq 3\times 10^{-7}\)\strut
 \end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\(6.82\times 10^{-7}\)\strut
+\(2.36\times 10^{-6}\)\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
