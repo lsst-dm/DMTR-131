@@ -9,12 +9,9 @@
 
 \setDocAbstract{%
 This brief report describes measurements of interest that were carried out for release v17.0 of the Science Pipeline.
-
 In short, the astrometric performance is excellent in comparison to both the per cycle ramps as well as the design level KPMs. The photometric performance is not as good. Though the photometric KPMs are not meeting specs, there have been no regressions from the v16.0 release.
-
 Note that TE1 and TE2 are significantly different than the values reported in the v16.0 characterization report.  This is due to an intentional
 change in how those KPMs are measured.
-
 The report for the previous version can be found in \citeds{DMTR-81}.
 }
 
@@ -24,7 +21,7 @@ The report for the previous version can be found in \citeds{DMTR-81}.
 \begin{document}
 \maketitle
 
-Measured using \href{https://github.com/lsst/validation_data_hsc}{validation\_data\_hsc}, which consists of 8 HSC engineering images: 2 \emph{r}-band, 4 \emph{i}'-band, and 2 \emph{y}-band. Measurements were made on individual, separately-processed, single-frame images: Jointcal and/or meas\_mosaic were not run. For comparison, we provide the \SRD required ``design'' value of each metric as defined in the Science Requirements Document \citedsp{LPM-17}, and, where available, the target for this release as defined in the Data Management Development Milestone Roadmap \citedsp{LDM-240}. All values were computed using the examples/runHscTest.sh script in the \href{https://github.com/lsst/validate_drp}{validate\_drp} package.
+Metrics were measured using \href{https://github.com/lsst/validation_data_hsc}{validation\_data\_hsc}, which consists of 8 HSC engineering images: 2 \emph{r}-band, 4 \emph{i}'-band, and 2 \emph{y}-band. Measurements were made on individual, separately-processed, single-frame images: Jointcal and/or meas\_mosaic were not run. For comparison, we provide the \SRD required ``design'' value of each metric as defined in the Science Requirements Document \citedsp{LPM-17}, and, where available, the target for this release as defined in the Data Management Development Milestone Roadmap \citedsp{LDM-240}. All values were computed using the examples/runHscTest.sh script in the \href{https://github.com/lsst/validate_drp}{validate\_drp} package. For context, the \SRD does not place any constraints on \emph{y}-band for these KPMs.  For the photometric metrics, there are only specifications for \emph{g}, \emph{r}, and \emph{i}'. In the case of the ellipticity correlation metrics, there are specs only for \emph{r} and \emph{i}'. The \emph{y}-band measurements are for interest and historical tracking.
 
 Some KPMs (AF1, AD1) involve thresholds that are different for ``design'', ``minimum'', and ``stretch'' specifications. Thus comparing one of these metrics against a given target number is a two-level process. Both the threshold used in the calculation is dependent on the specifications, and the requirement on the computed number is dependent on the specifications.
 
@@ -33,7 +30,7 @@ The metrics in this report have all been computed relative to the ``design'' thr
 Note also that the photometric performance of the pipelines in the \emph{y}-band is an under estimate of expected delivered performance.  For these tests, the \emph{y}-band data was calibrated with \emph{z}-band photometry.  This is due to the lack of a reference catalog containing \emph{y}-band information at this time. We recognize that the bandpass mismatch is certainly not the only source of scatter in the \emph{y}-band photometry. These metric measurements are still worth noting in this report as a historical benchmark to track relative performance.
 
 The measurements of the ellipticity correlation metrics, TE1 and TE2, changed significantly relative to previous characterization reports.  This is
-due to an intentional change in how the measurements are defined in \texttt{validate_drp}. In early July 2018, the measurement definitions were changed
+due to an intentional change in how the measurements are defined in \texttt{validate\_drp}. In early July 2018, the measurement definitions were changed
 to agree with the definitions used in high level project documents: e.g. \href{http://ls.st/LPM-17}{LPM-17}.
 
 The per cycle target numbers come from the ``KPMs'' sheet of \href{http://ls.st/LDM-240}{LDM-240}.
@@ -325,7 +322,7 @@ The following metrics are defined following LSR-REQ-0094
 \toprule
 Metric &
 Unit &
-SRD Requirement &
+SRD Requirement--Design &
 Release 17 Target &
 Value
 \tabularnewline
@@ -456,7 +453,7 @@ Metric\strut
 \end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
 Unit\strut
 \end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\raggedright\strut
-SRD Requirement\strut
+SRD Requirement--Design\strut
 \end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright\strut
 Release 17 Target\strut
 \end{minipage} & \begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
@@ -540,5 +537,5 @@ We expect no significant changes relative to the
 report on version 12 \citedsp{DMTR-15}.
 
 
-\bibliography{lsst}
+\bibliography{lsst,lsst-dm,refs_ads,refs,books,local}
 \end{document}
